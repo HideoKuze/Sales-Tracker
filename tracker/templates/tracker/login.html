@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example</title>
+<link href="{% static 'css/hover.css' %}" rel="stylesheet" media="all">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+<!-- CSS -->	
+<style>
+body {
+background-image: url('/pix/samples/bg1.gif');
+}
+
+main {
+margin-bottom: 100%;
+}
+
+.floating-menu {
+font-family: sans-serif;
+background: blue;
+padding: 5px;;
+width: 130px;
+z-index: 100;
+position: fixed;
+bottom: 200px;
+right: 700px;
+box-shadow: 5px 5px 5px;
+border-radius:5px 5px 5px 5px;
+}
+
+.floating-menu a, 
+.floating-menu h3 {
+font-size: 0.9em;
+display: block;
+margin: 0 0.5em;
+color: white;
+}
+
+input {
+	width: 120px;
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- HTML -->
+<main>
+
+<nav class="floating-menu">
+<h3>Login</h3>
+
+<form method='POST' class= "post-form"> {{ form.as_p }} </form>
+
+<a href="#" class="hvr-grow">Create Account</a>
+
+</nav>
+
+</main>
+
+</body>
+</html>
