@@ -2,8 +2,6 @@
 from django import forms
 from models import LoginInfo
 
-class LoginForms(forms.ModelForm):
-
-	class Meta:
-		model = LoginInfo
-		fields = ('username', 'password')
+class LoginForms(forms.Form):
+	username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+	password = forms.CharField(widget=forms.PasswordInput)
