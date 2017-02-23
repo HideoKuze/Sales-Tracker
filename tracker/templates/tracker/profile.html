@@ -10,10 +10,12 @@
     <title>DUFC Sign-In</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="{% static 'js/custom_javascript.min.js' %}"</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">-->
     <link rel="stylesheet" href="{% static 'css/bootstrap-override.css' %}">
+    
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
   </head>
 <nav class="navbar navbar-default" role="navigation">
@@ -64,3 +66,21 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav><div class="container"></div>
+<!-- Profile pic -->
+<img class="profile_pic" id='myImg' alt='Profile Picture' src="https://i0.wp.com/ismoph17.com/wp-content/uploads/2016/08/blank-profile-picture-973460.png" height='160' width='150'>
+
+<!-- Modal effect -->
+<div id='myModal' class="modal">
+
+    <span class='close' onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+    
+    <img class="modal-content" height='600' id='img01'>
+
+    <div id='caption'>hello</div>
+</div>
+</html>
+
+<div>
+    <ul class='profile_options'>
+      <li><a href='#'>Sales</a></li>
+    </ul>

@@ -1,5 +1,5 @@
 from .forms import LoginForms
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -27,10 +27,12 @@ def login(request):
 			user = authenticate(username=username, password=password)
 			if user is not None:
 				auth_login(request, user)
-				return HttpResponse('Logged in')
+				#redirect them to their profile page
+				return redirect(profile)
 			else:
 				return HttpResponse('invalid username/password combo')
 		else:
+			#redirect user to new page to create them a new account
 			User.objects.create_user(username=username, password=password)
 			user = authenticate(username=username, password=password)
 			auth_login(request, user)
