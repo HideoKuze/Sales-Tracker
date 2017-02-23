@@ -10,13 +10,13 @@
     <title>DUFC Sign-In</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="{% static 'css/hover.css' %}" rel="stylesheet" media="all">
     <script src="{% static 'js/custom_javascript.min.js' %}"</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!--<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">-->
-    <link rel="stylesheet" href="{% static 'css/bootstrap-override.css' %}">
-    
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-override.css' %}">
   </head>
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -53,7 +53,8 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Sign Out</a></li>
+      <li id="viraone_logo"><a href="#">ViraOne</a></li>
+      <li class='sign_out_button'><a href="#">Sign Out</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN <b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -67,7 +68,7 @@
   </div><!-- /.navbar-collapse -->
 </nav><div class="container"></div>
 <!-- Profile pic -->
-<img class="profile_pic" id='myImg' alt='Profile Picture' src="https://i0.wp.com/ismoph17.com/wp-content/uploads/2016/08/blank-profile-picture-973460.png" height='160' width='150'>
+<img class="profile_pic" id='myImg' alt='Profile Picture' src="https://i0.wp.com/ismoph17.com/wp-content/uploads/2016/08/blank-profile-picture-973460.png" height='160' width='150' border='2'>
 
 <!-- Modal effect -->
 <div id='myModal' class="modal">
@@ -82,5 +83,8 @@
 
 <div>
     <ul class='profile_options'>
-      <li><a href='#'>Sales</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-usd hvr-grow"> Sales</span></a></li>
+      <li><a href='#'><span class="glyphicon glyphicon-usd hvr-grow"> My Orders</span></a></li>
+      <li><a href='#' class='hvr-grow'>Events</a></li>
     </ul>
+</div>
