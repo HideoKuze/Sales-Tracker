@@ -11,6 +11,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="{% static 'css/hover.css' %}" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Abril+Fatface">
     <script src="{% static 'js/custom_javascript.min.js' %}"</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -68,23 +69,28 @@
   </div><!-- /.navbar-collapse -->
 </nav><div class="container"></div>
 <!-- Profile pic -->
-<img class="profile_pic" id='myImg' alt='Profile Picture' src="https://i0.wp.com/ismoph17.com/wp-content/uploads/2016/08/blank-profile-picture-973460.png" height='160' width='150' border='2'>
+<div class='black_bar'>
+    <img class="profile_pic" id='myImg' alt='Profile Picture' src="https://i0.wp.com/ismoph17.com/wp-content/uploads/2016/08/blank-profile-picture-973460.png" height='160' width='150' border='2'>
 
 <!-- Modal effect -->
-<div id='myModal' class="modal">
+    <div id='myModal' class="modal">
 
-    <span class='close' onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+        <span class='close' onclick="document.getElementById('myModal').style.display='none'">&times;</span>
     
-    <img class="modal-content" height='600' id='img01'>
+        <img class="modal-content" height='600' id='img01'>
 
-    <div id='caption'>hello</div>
-</div>
+        <div id='caption'>hello</div>
+    </div>
+    <div>
+      <ul class='profile_options'>
+        <li><span class='glyphicon glyphicon-usd'></span><a href="#" class='hvr-grow'>  Sales</span></a></li>
+        <li><span class='glyphicon glyphicon-send'></span><a href='#' class='hvr-grow'>  My Orders</span></a></li>
+        <li><span class='glyphicon glyphicon-calendar'></span><a href='#' class='hvr-grow'>  Events</a></li>
+      </ul>
+    </div>
+    <div>
+<div class='main_bar'>
+    
+<!--Black vertical bar that will align to the left of the page -->
+
 </html>
-
-<div>
-    <ul class='profile_options'>
-      <li><a href="#"><span class="glyphicon glyphicon-usd hvr-grow"> Sales</span></a></li>
-      <li><a href='#'><span class="glyphicon glyphicon-usd hvr-grow"> My Orders</span></a></li>
-      <li><a href='#' class='hvr-grow'>Events</a></li>
-    </ul>
-</div>

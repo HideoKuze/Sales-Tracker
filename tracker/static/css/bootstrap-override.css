@@ -1,9 +1,12 @@
-.collapse {
+.navbar {
 	margin-bottom: 0px;
+}
+.collapse {
+	margin-bottom: 10px;
 }
 
 .sidebar-nav {
-	margin-left:-200px;
+
 }
 .save-btn-default {
 	position: relative;left:50px;top:-36px;
@@ -31,7 +34,9 @@ label {
 }
 
 .profile_pic {
-	margin-left: 10px;
+	z-index: 1;
+	margin-left: -17px;
+	margin-bottom: 10px;
 }
 
 /* Style the Image Used to Trigger the Modal */
@@ -135,13 +140,15 @@ label {
 }
 
 ul.profile_options {
+	z-index: 1;
 	list-style-type: none;
 	text-align: left;
-	margin-left: -30px;
+	margin-left: -50px;
 	letter-spacing:1px;
 	text-transform: capitalize;
 	text-shadow: 2px 2px 2px #CCCCCC;
 	font-size:16px;
+	font-family: 'Abril Fatface', serif;
 }
 
 #viraone_logo {
@@ -166,7 +173,7 @@ ul.profile_options {
   color: #ffffff;
   font-size: 17px;
   border-radius: px;
-  padding: 1px 1px 1px 1px;
+  padding: 0px 0px 0px 0px;
   text-decoration: none;
 }
 
@@ -179,4 +186,19 @@ ul.profile_options {
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+
+.black_bar {
+	z-index:2;
+	background-color: lightgrey;
+    width: 175px;
+    height: 686px;
+    padding: 25px;
+}
+
+.main_bar {
+	background-color: #ed1174;
+	width: 1300px;
+	height: 708px;
+	margin-left: 150px;
+	margin-top: -300px;
 }
