@@ -146,9 +146,9 @@ ul.profile_options {
 	margin-left: -50px;
 	letter-spacing:1px;
 	text-transform: capitalize;
-	text-shadow: 2px 2px 2px #CCCCCC;
 	font-size:16px;
 	font-family: 'Abril Fatface', serif;
+	font-color: white;
 }
 
 #viraone_logo {
@@ -189,16 +189,34 @@ ul.profile_options {
 
 .black_bar {
 	z-index:2;
-	background-color: lightgrey;
+	background-color: black;
     width: 175px;
     height: 686px;
     padding: 25px;
+    border-radius: 10px;
+    border-style:solid;
+    margin-top: 6px;
 }
 
 .main_bar {
 	background-color: #ed1174;
-	width: 1300px;
-	height: 708px;
-	margin-left: 150px;
-	margin-top: -300px;
+	width: 1260px;
+	height: 684px;
+	margin-left: 178px;
+	margin-top: -685px;
+	border-radius: 10px;
+	border-style: solid;
+
+}
+
+a {
+	color:white;
+}
+
+a:hover {
+	color:#ed1174;
+	text-decoration: none;
+}
+.glyphicon {
+	color:white;
 }
