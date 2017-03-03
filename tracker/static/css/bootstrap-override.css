@@ -139,14 +139,12 @@ label {
     cursor: pointer;
 }
 
-ul.profile_options {
+a.profile_options {
 	z-index: 1;
 	list-style-type: none;
-	text-align: left;
-	margin-left: -50px;
 	letter-spacing:1px;
 	text-transform: capitalize;
-	font-size:16px;
+	font-size:12px;
 	font-family: 'Abril Fatface', serif;
 	font-color: white;
 }
@@ -316,8 +314,23 @@ $NUM_LAYERS: 20;
   100% { transform: rotateY(-40deg) rotateX(-43deg); }
 }
 
+button.w3-btn-block{
+	border-radius: 15px;
+}
+button.w3-btn-block:hover {
+	background-color: #ed1174;
+}
+
+.w3-container1 {
+	height: 544px;
+}
+
+.tree-class{
+	padding:7px 50px;
+	align-items: center;
+}
 /* Style the buttons that are used to open and close the accordion panel */
-button.accordion {
+/*button.accordion {
     background-color: transparent;
     color: #444;
     cursor: pointer;
@@ -331,12 +344,12 @@ button.accordion {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-button.accordion.active, button.accordion:hover {
+/*button.accordion.active, button.accordion:hover {
     background-color: #ed1174;
 }
 
 /* Style the accordion panel. Note: hidden by default */
-div.panel {
+/*div.panel {
     padding: 0 18px;
     background-color: transparent;
     display: none;
@@ -344,7 +357,5 @@ div.panel {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
+*/
 
-button.w3-btn-block:hover {
-	background-color: #ed1174;
-}
