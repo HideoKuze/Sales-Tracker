@@ -330,7 +330,7 @@ button.w3-btn-block:hover {
 	align-items: center;
 }
 /* Style the buttons that are used to open and close the accordion panel */
-/*button.accordion {
+button.accordion {
     background-color: transparent;
     color: #444;
     cursor: pointer;
@@ -344,12 +344,12 @@ button.w3-btn-block:hover {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-/*button.accordion.active, button.accordion:hover {
+button.accordion.active, button.accordion:hover {
     background-color: #ed1174;
 }
 
 /* Style the accordion panel. Note: hidden by default */
-/*div.panel {
+div.panel {
     padding: 0 18px;
     background-color: transparent;
     display: none;
@@ -357,5 +357,5 @@ button.w3-btn-block:hover {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-*/
+
 
