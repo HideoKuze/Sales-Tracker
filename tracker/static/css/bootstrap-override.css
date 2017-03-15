@@ -324,9 +324,132 @@ button.w3-btn-block:hover {
 .w3-container1 {
 	height: 544px;
 }
+/*
+.tree ul{
+	padding-top: 20px; poistion: relative;
+}
+.tree li{
+	float:left; text-align:center;
+	list-style: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+	}
 
-.tree-class{
-	padding:7px 50px;
+.tree li a{
+	padding: 5px 10px;
+	text-decoration: none;
+	color: #333;
+	display: inline-block;
+}
+
+.tree li::before, .tree li::after {
+	content:'';
+	position: absolute; top: 0; right: 50%;
+	border-top: 1px solid white;
+	width: 50%; height:20px;
+}
+
+.tree li::after{
+	right:auto; left: 50%;
+	border-left: 1px solid white;
+}
+
+.tree li:only-child::after, .tree li:only-child::before{
+	display: none;
+}
+
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+
+}
+
+.tree li:last-child::before{
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+}
+
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before{
+	content:'';
+	position:absolute; top: 0; left:50%;
+	border-left: 1px solid #ccc;
+	width: 0; height: 20px;
+}
+*/
+
+/*Now the CSS*/
+* {margin: 0; padding: 0;}
+
+.tree ul {
+	padding-top: 20px; position: relative;
+}
+
+.tree li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 1px solid #ccc;
+	width: 50%; height: 20px;
+}
+.tree li::after{
+	right: auto; left: 50%;
+	border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 1px solid #ccc;
+	width: 0; height: 20px;
+}
+
+.tree li a{
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: #666;
+	font-family: arial, verdana, tahoma;
+	font-size: 11px;
+	display: inline-block;
+	
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 /* Style the buttons that are used to open and close the accordion panel */
 button.accordion {
@@ -394,7 +517,7 @@ body{
 	margin: 0 auto;
 	padding: 0 20px;
 }
-
+/*
 a:focus{
 	outline: 2px dashed #f7f7f7;
 }
