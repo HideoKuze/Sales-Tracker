@@ -483,11 +483,13 @@ ul a span{
 	z-index: 1;	
 }
 
+/* First <li> element with 'subdirector' class is selected */
 .subdirector > li:first-child{
 	float: right;
 	right: 27.2%;
 	border-left: 4px solid white;
 }
+
 
 .departments > li:first-child{	
 	float: left;
@@ -503,6 +505,7 @@ ul a span{
 .subdirector > li:first-child a{	
 	left: 25px;
 }
+
 
 @media all and (max-width: 767px){
 	.subdirector > li:first-child,
