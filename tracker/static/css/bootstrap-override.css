@@ -54,7 +54,7 @@ label {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 100; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -69,7 +69,8 @@ label {
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
+    width: 90%;
+    height: 90%;
     max-width: 700px;
 }
 
@@ -157,68 +158,12 @@ a.profile_options {
     opacity: 0.8;
 }
 
-.sign_out_button {
-  background: #ed1174;
-  background-image: -webkit-linear-gradient(top, #ced6db, #a1a6a8);
-  background-image: -moz-linear-gradient(top, #ced6db, #a1a6a8);
-  background-image: -ms-linear-gradient(top, #ced6db, #a1a6a8);
-  background-image: -o-linear-gradient(top, #ced6db, #a1a6a8);
-  background-image: linear-gradient(to bottom, #ced6db, #a1a6a8);
-  -webkit-box-shadow: 0px 1px 3px #666666;
-  -moz-box-shadow: 0px 1px 3px #666666;
-  box-shadow: 0px 1px 3px #666666;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 17px;
-  border-radius: px;
-  padding: 0px 0px 0px 0px;
-  text-decoration: none;
-}
+/* Make each branch a clickable button without any styling */
 
-.sign_out_button:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
-}
 
-.black_bar {
-	z-index:2;
-	background-color: black;
-    width: 175px;
-    height: 686px;
-    padding: 25px;
-    border-radius: 10px;
-    border-style:solid;
-    margin-top: 6px;
-    border: 1px solid #FFFFFF;
-    border-top-left: 25px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    box-shadow: 0 3px 0.7px 1px #777777, 0 -7px rgba(0, 0, 0, 0.4) inset;
-}
-
-.main_bar {
-	width: 1260px;
-	height: 684px;
-	margin-left: 178px;
-	margin-top: -685px;
-	border-radius: 10px;
-	border-style: solid;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0374+41,b20050+100 */
-    background: rgb(255,3,116); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(255,3,116,1) 41%, rgba(178,0,80,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(255,3,116,1) 41%,rgba(178,0,80,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(255,3,116,1) 41%,rgba(178,0,80,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0374', endColorstr='#b20050',GradientType=0 ); /* IE6-9 */
-    border: 1px solid #FFFFFF;
-    border-top-left: 25px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    box-shadow: 0 3px 0.7px 1px #777777, 0 -7px rgba(0, 0, 0, 0.4) inset;
+.customer-btn{
+	border:none;
+	background-color:transparent;
 }
 
 a {
