@@ -146,17 +146,17 @@
                     <a href='#'>Customer 5</a>
                   </li>
                   <li id="parentNode">
-                    <button class="customer-btn"><a href='#'>Customer 6</a></button>
+                    <button id="button" class="customer-btn"><a href='#'>Customer 6</a></button>
                     <ul>
                       <li id="childNode">
                         <a href='#'>Customer A</a>
                       </li>
                     </ul>
                   </li>
-                  <li>
-                    <a href='#'>Customer 7</a>
+                  <li id='parentNode'>
+                    <button id="button" class="customer-btn"><a href='#'>Customer 7</a></button>
                     <ul>
-                      <li>
+                      <li id="childNode">
                       <a href='#'> Customer A</a>
                       </li>
                     </ul>
@@ -264,13 +264,14 @@ window.onload = function child_check() {
     // Get the <span> element that closes the modal
   
   if (parent_check){
-    parent.id = "myBtn";
+    button.id = "myBtn";
     // Code that activates modal
     // Get the modal
     // When the user clicks on the button, open the modal 
     var btn = document.getElementById("myBtn");
     var span = document.getElementsByClassName("close")[0];
     var modal = document.getElementById('myModal');
+    //When the user clicks on the modal, open it
     btn.onclick = function() {
       modal.style.display = "block";
     }
@@ -279,7 +280,7 @@ window.onload = function child_check() {
     modal.style.display = "none";
       }
 
-    window.onlick = function(event) {
+    window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
@@ -287,7 +288,7 @@ window.onload = function child_check() {
     
       }
     //I can use this line to check the id of the parent node
-    //document.getElementById('check').innerHTML=parent.id;
+    //document.getElementById('check').innerHTML=button.id;
     }
 
 </script>
