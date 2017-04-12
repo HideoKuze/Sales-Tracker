@@ -437,6 +437,9 @@ body{
 	background: #F5EEC9;	
 }
 
+h5 {
+	height:35px;
+}
 .content{
 	width: 100%;
 	max-width: 1142px;
@@ -448,6 +451,10 @@ body{
 	height:auto ;
 }
 
-.w3-bar-item, .w3-button, .w3-theme-d4 {
+.w3-bar-item{
 	color: black;
+}
+
+.w3-custom{
+	background-color: #333333;
 }

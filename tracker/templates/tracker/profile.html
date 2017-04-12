@@ -16,33 +16,28 @@
     <script src="{% static 'js/custom_javascript.min.js' %}"</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-override.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script> 
     <link rel="stylesheet" href="/lib/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-override.css' %}">
   </head>
 <body class="w3-theme-l5">
 
 <!-- Navbar -->
 <div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+ <div class="w3-bar w3-custom w3-left-align w3-large">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>ViraOne</a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-custom"><i style="color:white" class="fa fa-home w3-margin-right"></i><img src="http://i.imgur.com/BXdUjkJ.jpg" height="36"></img></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i style="color:white" class="fa fa-globe"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i style="color:white" class="fa fa-user"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i style="color:white" class="fa fa-envelope"></i></a>
   <div class="w3-hide-small w3-dropdown-hover">
-    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
-    <div class="w3-dropdown-content w3-white w3-card-4">
-      <a href="#">One new friend request</a>
-      <a href="#">John Doe posted on your wall</a>
-      <a href="#">Jane likes your post</a>
-    </div>
+    <button class="w3-button w3-padding-large" title="Notifications"><i style="color:white" class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
   </div>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="/w3images/avatar2.png" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a>
+  <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"></a>-->
  </div>
 </div>
 
@@ -64,7 +59,7 @@
       <div class="w3-card-2 w3-round w3-white">
         <div class="w3-container">
          <h4 class="w3-center">Charles Smith</h4>
-         <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <p class="w3-center"><img src="http://www.skyovnis.com/wp-content/uploads/2014/12/Profile-sky-ovnis.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
          <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Marketer</p>
          <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Toronto, ON</p>
@@ -75,15 +70,15 @@
       <!-- Accordion -->
       <div class="w3-card-2 w3-round">
         <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-custom w3-left-align"><i style="color:white" class="fa fa-circle-o-notch fa-fw w3-margin-right"></i><span style="color:white">My Groups</span></button>
           <div id="Demo1" class="w3-hide w3-container">
             <p>Some text..</p>
           </div>
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-custom w3-left-align"><i style="color:white" class="fa fa-calendar-check-o fa-fw w3-margin-right"></i><span style="color:white">My Events</span></button>
           <div id="Demo2" class="w3-hide w3-container">
             <p>Some other text..</p>
           </div>
-          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> Referral Tree</button>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-custom w3-left-align"><i style="color:white" class="fa fa-users fa-fw w3-margin-right"></i><span style="color:white"> Referral Tree</span></button>
           <div id="Demo3" class="w3-hide w3-container">
          <div class="w3-row-padding">
          <br>
@@ -122,7 +117,7 @@
     </div>
     
     <!-- Middle Column -->
-    <div class="w3-col m8">
+    <div class="w3-col m8" style="width:850px">
       <div class="content">
         <figure class="w3-card-4 w3-round w3-container1 w3-grey" style='margin: -5px;'>
         <div class='tree'>
@@ -203,7 +198,7 @@
     </div>
     
     <!-- Right Column -->
-    <div class="w3-col m1">
+    <div class="w3-col m1" style="width:175px">
       <div class="w3-card-2 w3-round w3-white w3-center">
         <div class="w3-container">
           <p>Upcoming Events:</p>
@@ -214,11 +209,6 @@
         </div>
       </div>
       <br>
-      <div class="w3-card-2 w3-round w3-white w3-center">
-        <div class="w3-container">
-            </div>
-          </div>
-        </div>
       </div>
       
     <!-- End Right Column -->
@@ -232,12 +222,12 @@
 <br>
 
 <!-- Footer -->
-<footer class="w3-container w3-theme-d3 w3-padding-16">
+<footer class="w3-custom w3-container w3-padding-16" style="border:10px">
   <h5>Footer</h5>
 </footer>
 
-<footer class="w3-container w3-theme-d5">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+<footer class="w3-container w3-custom">
+  <p class= "w3-custom">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
 <!-- The Modal -->
@@ -273,7 +263,7 @@ function openNav() {
     }
 }
 </script>
-<p id='check'></p> 
+<!--<p id='check'></p>-->
 <script>
 
 
@@ -294,6 +284,7 @@ window.addEventListener('DOMContentLoaded', run);
     //determine if the element has any UL elements, if it does then it's a parent, if not then it's not so it doesn't get the "parent" class
     if (getChildren[0].tagName == "BUTTON" && getChildren[getChildren.length-1].tagName == "UL"){
       li.classList.add("parent");
+      //don't display anything if the button has more than one child
     };
     if (li.classList.contains('parent')){
       // Since any LI element's first child will always be a button we can just add 'myBtn' to it
@@ -311,6 +302,9 @@ window.addEventListener('DOMContentLoaded', run);
       //When the user clicks on the modal, open it
       for (i=0; i < btn.length; i++){
         btn[i].addEventListener('click', function() {
+          //if (getChildren[0].tagName == "BUTTON" && getChildren[getChildren.length-1]tagName == "UL"){
+            //if the above condition is met, place the desired code into the modal
+          //}
           modal.style.display = "block";
         });
         // When the user clicks on <span> (x), close the modal
