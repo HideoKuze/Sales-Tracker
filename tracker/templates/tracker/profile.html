@@ -30,7 +30,7 @@
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>ViraOne</a>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
   <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a>
@@ -122,47 +122,77 @@
     </div>
     
     <!-- Middle Column -->
-    <div class="w3-col m7">
+    <div class="w3-col m8">
       <div class="content">
         <figure class="w3-card-4 w3-round w3-container1 w3-grey" style='margin: -5px;'>
         <div class='tree'>
           <ul>
             <li>
-              <a href='#'>Marketer</a>
+              <button class="customer-btn"><a href='#'>Marketer</a></button>
                 <ul>
                   <li>
-                    <a href='#'>Customer 1</a>
-                  </li>
-                  <li>
-                    <a href='#'>Customer 2</a>
-                  </li>
-                  <li>
-                    <a href="#">Customer 3</a>
-                  </li>
-                  <li>
-                    <a href='#'>Customer 4</a>
-                  </li>
-                  <li>
-                    <a href='#'>Customer 5</a>
-                  </li>
-                  <li id='test' class="parentNode">
-                    <button class="customer-btn button"><a href='#'>Customer 6</a></button>
+                    <button class="customer-btn"><a href='#'>Customer 1</a></button>
                     <ul>
                       <li>
-                        <a href='#'>Customer A</a>
+                        <button class="customer-btn button"><a href='#'>Customer A</a></button>
                       </li>
                     </ul>
                   </li>
-                  <li class="parentNode">
+                  <li>
+                    <button class="customer-btn customer"><a href='#'>Customer 2</a></button>
+                    <ul>
+                      <li>
+                        <button class="customer-btn button"><a href='#'>Customer A</a></button>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <button class="customer-btn button"><a href="#">Customer 3</a></button>
+                    <ul>
+                      <li>
+                        <button class="customer-btn button"> <a href='#'>Customer A</a></button>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <button class="customer-btn button"><a href='#'>Customer 4</a></button>
+                    <ul>
+                      <li>
+                        <button class="customer-btn button"><a href='#'>Customer A</a></button>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <button class="customer-btn button"><a href='#'>Customer 5</a></button>
+                    <ul>
+                      <li>
+                        <button class="customer-btn button"><a href='#'>Customer A</a></button>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <button class="customer-btn button"><a href='#'>Customer 6</a></button>
+                    <ul>
+                      <li>
+                        <button class="customer-btn button"><a href='#'>Customer A</a></button>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
                     <button class="customer-btn button"><a href='#'>Customer 7</a></button>
                     <ul>
-                      <li class="childNode">
-                      <a href='#'> Customer A</a>
+                      <li>
+                      <button class="customer-btn button"><a href='#'> Customer A</a>
                       </li>
                     </ul>
                   </li>
                   <li>
                     <button class="customer-btn button"><a href='#'>Customer 8</a></button>
+                    <ul>
+                      <li>
+                      <button class="customer-btn button"><a href="#"> Customer A</a></button>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
             </li>
@@ -173,7 +203,7 @@
     </div>
     
     <!-- Right Column -->
-    <div class="w3-col m2">
+    <div class="w3-col m1">
       <div class="w3-card-2 w3-round w3-white w3-center">
         <div class="w3-container">
           <p>Upcoming Events:</p>
@@ -259,10 +289,19 @@ window.addEventListener('DOMContentLoaded', run);
   //when we iterate over the collection is allows us to single out individual elements
   for (i=0; i < allLIElements.length; i++){
     var li = allLIElements[i];
-    if ( li.firstElementChild != null ){
-      li.classList.add('myBtn');     
+    var getChildren = allLIElements[i].children;
+    //determine if the first child is a button element, if it is then gives the class "parent" to itself
+    //determine if the element has any UL elements, if it does then it's a parent, if not then it's not so it doesn't get the "parent" class
+    if (getChildren[0].tagName == "BUTTON" && getChildren[getChildren.length-1].tagName == "UL"){
+      li.classList.add("parent");
+    };
+    if (li.classList.contains('parent')){
+      // Since any LI element's first child will always be a button we can just add 'myBtn' to it
+      li.firstElementChild.classList.add('myBtn');     
         // tests whether or not the element has been given the proper class
     //document.getElementById('check').innerHTML = li.childElementCount;
+    //testing for the tag of the first child
+    //document.getElementById('check').innerHTML = getChildren[0].tagName;
       };
 
     }
