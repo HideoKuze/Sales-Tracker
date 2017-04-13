@@ -284,16 +284,9 @@ window.addEventListener('DOMContentLoaded', run);
     //determine if the element has any UL elements, if it does then it's a parent, if not then it's not so it doesn't get the "parent" class
     if (getChildren[0].tagName == "BUTTON" && getChildren[getChildren.length-1].tagName == "UL"){
       li.classList.add("parent");
+      li.firstElementChild.classList.add("myBtn");
       //don't display anything if the button has more than one child
     };
-    if (li.classList.contains('parent')){
-      // Since any LI element's first child will always be a button we can just add 'myBtn' to it
-      li.firstElementChild.classList.add('myBtn');     
-        // tests whether or not the element has been given the proper class
-    //document.getElementById('check').innerHTML = li.childElementCount;
-    //testing for the tag of the first child
-    //document.getElementById('check').innerHTML = getChildren[0].tagName;
-      };
 
     }
       var btn = document.getElementsByClassName("myBtn");
