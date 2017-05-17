@@ -235,7 +235,9 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
+    <div id='modal-tree'>
     <p>Some text in the Modal..</p>
+    </div>
   </div>
 </div>
  
@@ -284,22 +286,24 @@ window.addEventListener('DOMContentLoaded', run);
     //determine if the element has any UL elements, if it does then it's a parent, if not then it's not so it doesn't get the "parent" class
     if (getChildren[0].tagName == "BUTTON" && getChildren[getChildren.length-1].tagName == "UL"){
       li.classList.add("parent");
+      //add class myBtn to it's child
       li.firstElementChild.classList.add("myBtn");
       //don't display anything if the button has more than one child
-    };
-
+    } 
     }
+
+    
       var btn = document.getElementsByClassName("myBtn");
       var span = document.getElementsByClassName("close")[0];
       var modal = document.getElementById('myModal');
       //When the user clicks on the modal, open it
       for (i=0; i < btn.length; i++){
         btn[i].addEventListener('click', function() {
-          //if (getChildren[0].tagName == "BUTTON" && getChildren[getChildren.length-1]tagName == "UL"){
-            //if the above condition is met, place the desired code into the modal
-          //}
           modal.style.display = "block";
         });
+        clone = btn[i].parentNode.cloneNode(true);
+        //add the cloned content to the modal
+        document.getElementById('modal-tree').innerHTML = clone;
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
           modal.style.display = "none";
