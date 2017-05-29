@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
-from .models import LoginInfo, Product, RevenueInfo, ExtendedProfile
+from .models import LoginInfo, Product, RevenueInfo, ExtendedProfile, Buyer
 
 class ProfileInline(admin.StackedInline):
 	model = ExtendedProfile
@@ -16,3 +16,5 @@ admin.site.register(User, UserAdmin)
 admin.site.register(LoginInfo)
 admin.site.register(Product)
 admin.site.register(RevenueInfo)
+admin.site.register(Buyer)
+

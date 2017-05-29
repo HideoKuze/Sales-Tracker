@@ -5,3 +5,6 @@ from models import LoginInfo
 class LoginForms(forms.Form):
 	username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Username'}))
 	password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Password'}))
+
+class QuantityForms(forms.Form):
+	amount = forms.DecimalField(widget=forms.NumberInput(attrs={'placeholder': "Enter Quantity"}))

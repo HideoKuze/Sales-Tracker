@@ -1,4 +1,5 @@
-from .forms import LoginForms
+from .forms import LoginForms, QuantityForms
+from .models import Product, ExtendedProfile, RevenueInfo, Purchases
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
@@ -14,6 +15,7 @@ from django.db import IntegrityError
 import csv
 from django.utils.six.moves import range
 from django.http import StreamingHttpResponse
+from django.db.models import Sum
 # Create your views here.
 
 class Echo(object):
@@ -92,3 +94,16 @@ def sign_up(request):
 			user = authenticate(username=username, password=password)
 			auth_login(request, user)
 			return HttpResponse('good') """
+
+def product_page(request):
+	all_products = Product.objects.all()
+	quantity_forms = QuantityForms(request.POST)
+	quantity = request.POST.get('amount')
+	grand_total = RevenueInfo.user_total
+	current_user = request.user
+	#buyer = User.
+	if quantity > 0:
+		#ExtendedProfile().amount_spent += (quantity * Product.price_CAD)
+		#RevenueInfo().user_total += int(quantity)
+		return HttpResponse(current_user.product_set.all()[0].description)
+	return render(request,'tracker/product_page.html', {'all_products':all_products, 'quantity_forms':quantity_forms})
