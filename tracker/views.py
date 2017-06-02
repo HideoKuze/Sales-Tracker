@@ -107,3 +107,7 @@ def product_page(request):
 		#RevenueInfo().user_total += int(quantity)
 		return HttpResponse(current_user.product_set.all()[0].description)
 	return render(request,'tracker/product_page.html', {'all_products':all_products, 'quantity_forms':quantity_forms})
+
+def product_details(request, object_id):
+	product = Product.objects.get(id=object_id)
+	return render(request, 'tracker/product_details.html', {'product':product})

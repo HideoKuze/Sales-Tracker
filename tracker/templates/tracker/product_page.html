@@ -7,9 +7,6 @@
 <h3><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></h3>
 <p>{{ object.description }}</p>
 <p>{{ object.price_CAD }}</p>
-<form method='POST'>
-{% csrf_token %}
-{{ quantity_forms.amount }}<button>Buy</button>
-</form>
 {% endfor %}
 </html>
+
