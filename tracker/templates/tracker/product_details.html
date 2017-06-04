@@ -3,4 +3,8 @@
 {% load staticfiles %}
 <h1>{{ product.name }}</h1>
 <p>{{ product.description }}</p>
+<form method='POST'>
+{% csrf_token %}
+{{ quantity_forms.amount }}<button>Buy</button>
+</form>
 </html>
