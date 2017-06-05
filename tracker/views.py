@@ -113,12 +113,13 @@ def product_details(request, object_id):
 	quantity = request.POST.get('amount')
 	product = Product.objects.get(id=object_id)
 	current_user = request.user
-	purchased_products = list(current_user.product_set.all())
+	purchased_products = current_user.product_set.all()
 	if quantity > 0:
 		#ExtendedProfile().amount_spent += (quantity * Product.price_CAD)
 		#RevenueInfo().user_total += int(quantity)
 		#everytime someone presses the buy button we need to create a Purchase object
 		transaction = Purchases(buyer=current_user, product=product)
 		transaction.save()
-		return HttpResponse(current_user.product_set.all())
+		return HttpResponse(current_user.product_set.all().values_list("name", flat=True))
+		
 	return render(request, 'tracker/product_details.html', {'product':product, 'quantity_forms': quantity_forms})
