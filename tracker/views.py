@@ -1,4 +1,4 @@
-from .forms import LoginForms, QuantityForms
+from .forms import LoginForms, QuantityForms, ImageUploadForm
 from .models import Product, ExtendedProfile, RevenueInfo, Purchases
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
@@ -120,6 +120,14 @@ def product_details(request, object_id):
 		#everytime someone presses the buy button we need to create a Purchase object
 		transaction = Purchases(buyer=current_user, product=product)
 		transaction.save()
-		return HttpResponse(current_user.product_set.all().values_list("name", flat=True))
+		return HttpResponse(current_user.product_set.values_list("name", flat=True))
 		
 	return render(request, 'tracker/product_details.html', {'product':product, 'quantity_forms': quantity_forms})
+
+def upload_pic(request):
+	image_upload = ImageUploadForm(request.POST, request.FILES)
+	if request.method == "POST":
+		if image_upload.is_valid():
+			pass
+	return render(request, 'tracker/upload_pic.html', {"image_upload": image_upload})
+	
