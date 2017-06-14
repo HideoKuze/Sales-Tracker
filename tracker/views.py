@@ -41,7 +41,8 @@ def export_info(request):
 
 
 def profile(request):
-	return render(request, 'tracker/profile.html', {})
+	user = user = User.objects.get(id=request.user.id)
+	return render(request, 'tracker/profile.html', {'user': user})
 
 def login(request):
 	# this will be the first page someone who isn't signed in will see
@@ -125,9 +126,29 @@ def product_details(request, object_id):
 	return render(request, 'tracker/product_details.html', {'product':product, 'quantity_forms': quantity_forms})
 
 def upload_pic(request):
-	image_upload = ImageUploadForm(request.POST, request.FILES)
+	user = User.objects.get(id=request.user.id)
+	return render(request, 'tracker/upload_pic.html')
+
+
+def album(request):
+	user = User.objects.get(id=request.user.id)
 	if request.method == "POST":
-		if image_upload.is_valid():
-			pass
-	return render(request, 'tracker/upload_pic.html', {"image_upload": image_upload})
-	
+		user.extendedprofile.img = request.FILES['uploaded_image']
+		user.extendedprofile.save()
+		#User.objects.filter(pk=request.user.id).update(extendedprofile__img=request.FILES['uploaded_image'])
+	return render(request, 'tracker/album.html', {"user": user})
+
+
+
+
+
+"""if request.method == "POST":
+		image_form = ImageUploadForm(request.POST, request.FILES)
+		if image_form.is_valid():
+			image_form.save()
+			return HttpResponse('success')
+	else:
+		image_form = ImageUploadForm(request.POST, request.FILES)
+		if image_form.is_valid():
+			image_form.img.save()
+			return HttpResponse('fail')"""
