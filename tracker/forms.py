@@ -14,4 +14,4 @@ class ImageUploadForm(forms.ModelForm):
 	#model to store the information about the pictures
 	class Meta:
 		model = ExtendedProfile
-		fields = ['img']
+		exclude = ()

@@ -1,5 +1,6 @@
 from .forms import LoginForms, QuantityForms, ImageUploadForm
 from .models import Product, ExtendedProfile, RevenueInfo, Purchases
+from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
@@ -127,6 +128,11 @@ def product_details(request, object_id):
 
 def upload_pic(request):
 	user = User.objects.get(id=request.user.id)
+	form = ImageUploadForm(request.POST, request.FILES)
+	if request.method == 'POST':
+		if form.is_valid():
+			form.save()
+
 	return render(request, 'tracker/upload_pic.html')
 
 
@@ -135,7 +141,8 @@ def album(request):
 	if request.method == "POST":
 		user.extendedprofile.img = request.FILES['uploaded_image']
 		user.extendedprofile.save()
-		#User.objects.filter(pk=request.user.id).update(extendedprofile__img=request.FILES['uploaded_image'])
+		#ExtendedProfile.objects.filter(pk=request.user.id).update(extendedprofile__img=request.FILES['uploaded_image'])
+
 	return render(request, 'tracker/album.html', {"user": user})
 
 

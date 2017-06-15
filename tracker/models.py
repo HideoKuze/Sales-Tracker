@@ -7,7 +7,7 @@ from django.db.models import Sum
 from django.core.urlresolvers import reverse
 
 def user_directory_path(instance, filename):
-	return 'user_{0}/{1}'.format(instance.user.id, filename)
+	return 'user_images/user_{0}/{1}'.format(instance.user.id, filename)
 
 # Create your models here.
 #LoginInfo is not being used, LoginForms in forms.py is
@@ -19,7 +19,7 @@ class ExtendedProfile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	amount_spent = models.DecimalField(max_digits=6, decimal_places=2, default=0, blank=True)
 	img = models.ImageField(upload_to=user_directory_path)
-	
+
 	#@classmethod tells the class to act on itself instead of an instance of itself
 	@classmethod
 	def total_amount(cls):

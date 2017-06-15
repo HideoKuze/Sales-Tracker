@@ -4,6 +4,7 @@
 <body>
 <form action="{% url 'album' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
 <input type="file" name="uploaded_image">
+{{ image_form.img }}
 <input type="submit" value="submit" />
 </form>
 </body>

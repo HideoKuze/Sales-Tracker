@@ -1,11 +1,9 @@
 {% load staticfiles %}
+{% load static %}
 
 <!DOCTYPE html>
 <html>
-{% for field in image_form.errors %}
-    {% for error in errors %}
-   	{{ error }}
-    {% endfor %}
-{% endfor %}
+
 <p> {{ user.extendedprofile.img }} </p>
+<img src=" {{ user.extendedprofile.img.url }}"
 </html>
