@@ -1,4 +1,6 @@
+{% load static %}
 {% load staticfiles %}
+<body data-media-url="{% get_media_prefix %}">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +43,7 @@
  </div>
 </div>
 
-<!-- Navbar on small screens -->
+<!-- Navbar on small screens http://www.skyovnis.com/wp-content/uploads/2014/12/Profile-sky-ovnis.jpg-->
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
   <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
@@ -59,7 +61,7 @@
       <div class="w3-card-2 w3-round w3-white">
         <div class="w3-container">
          <h4 class="w3-center">{{user.username}}</h4>
-         <p class="w3-center"><img src="http://www.skyovnis.com/wp-content/uploads/2014/12/Profile-sky-ovnis.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <p class="w3-center"><img src="{{user.extendedprofile.img.url}}" style="height:106px;width:106px" alt="Avatar"></p>
          <hr>
          <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Marketer</p>
          <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Toronto, ON</p>
